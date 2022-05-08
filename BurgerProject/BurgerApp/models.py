@@ -70,7 +70,7 @@ class Order(models.Model):
     ingredients = models.OneToOneField(Ingredient, on_delete=models.CASCADE, null=True)
     customer = models.OneToOneField(CustomerDetail, on_delete=models.CASCADE, null=True)
     price = models.CharField(max_length=20, blank=False)
-    oderTime = models.CharField(max_length=100, blank=False)
+    orderTime = models.CharField(max_length=100, blank=False)
 
     def __str__(self):
         return self.user + "Order"
