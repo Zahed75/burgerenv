@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'BurgerApp',
     'rest_framework',
     "corsheaders",
+    'rest_framework_simplejwt'
 ]
 
 MIDDLEWARE = [
@@ -75,6 +76,15 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+
+}
 
 WSGI_APPLICATION = 'BurgerProject.wsgi.application'
 
@@ -128,3 +138,4 @@ MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = "BurgerApp.UserProfile"
