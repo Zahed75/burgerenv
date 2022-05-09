@@ -48,7 +48,7 @@ class UserProfileSerializer(ModelSerializer):
 class IngredientSerializer(ModelSerializer):
     class Meta:
         model = Ingredient
-        fields = '__all__'
+        exclude = ["id"]
 
 
 class CustomerDetailSerializer(ModelSerializer):
